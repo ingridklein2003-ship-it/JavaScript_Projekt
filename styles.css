@@ -433,29 +433,64 @@ img{max-width:100%;display:block}
   text-decoration:underline;
 }
 
-.burger {
-  display: none;
-  flex-direction: column;
-  gap: 6px;
-  background: none;
-  border: none;
-  cursor: pointer;
+/* Burger er ALTID synlig */
+.burger{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  background:none;
+  border:none;
+  cursor:pointer;
+  padding:10px;
 }
 
-.burger span {
-  width: 28px;
-  height: 3px;
-  background: white;
+.burger span{
+  width:30px;
+  height:3px;
+  background:#fff;
+  display:block;
 }
 
-.mobil-menu {
-  display: none;
-  flex-direction: column;
-  gap: 16px;
-  background: #0a4a86;
-  padding: 20px;
+/* Menu-panel (dropdown) */
+.menu-panel{
+  position:absolute;
+  top:100%;
+  right:0;
+  width:min(360px, calc(100vw - 24px));
+  background:#0a4a86;
+  padding:18px;
+  border:1px solid rgba(255,255,255,.15);
+  box-shadow:0 12px 30px rgba(0,0,0,.25);
+
+  display:none;            /* skjult som udgangspunkt */
+  flex-direction:column;
+  gap:14px;
+  z-index:1000;
 }
 
-.mobil-menu.aktiv {
-  display: flex;
+.menu-panel a{
+  color:#fff;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+  font-size:13px;
+  padding:10px 8px;
+  border-radius:6px;
 }
+
+.menu-panel a:hover{
+  background:rgba(255,255,255,.12);
+}
+
+/* Åben tilstand */
+.menu-panel.aktiv{
+  display:flex;
+}
+
+/* Gør headeren til "anchor" for dropdown */
+.header__row{
+  position:relative;
+}
+
+/* (valgfrit) skjul den gamle desktop-nav hvis den stadig findes */
+.nav{ display:none !important; }

@@ -403,6 +403,83 @@ img{max-width:100%;display:block}
 }
 
 /* =========================
+   FAQ
+   ========================= */
+.faqSection{
+  background:var(--blue-800);
+  padding:46px 0 36px;
+}
+
+.faqTitle{
+  margin:0 0 22px;
+  text-align:center;
+  color:#fff;
+  font-weight:900;
+  letter-spacing:.6px;
+  font-size:clamp(28px, 3vw, 44px);
+}
+
+.faq{
+  max-width:720px;
+  margin:0 auto;
+}
+
+.faqItem{
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.faqQuestion{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  width:100%;
+  background:none;
+  border:none;
+  padding:18px;
+  font-size:16px;
+  font-weight:700;
+  color:#fff;
+}
+
+.faqSvar{
+  padding:10px;
+  font-size:1rem;
+  color:#fff;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transform: translateY(-20px);
+
+ transition:
+  max-height 0.4s ease,
+  opacity 0.25s ease,
+  transform 0.25s ease;
+}
+
+.icon{
+  display:inline-block;
+}
+
+.faqItem.active .faqSvar {
+  display: block;
+  max-height: 300px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.icon::before {
+  content: "+";
+  font-size: 20px;
+  font-weight: 700;
+  float: right;
+}
+
+.faqItem.active .icon::before {
+  content: "-";
+}
+
+/* =========================
    FOOTER
    ========================= */
 .footer{

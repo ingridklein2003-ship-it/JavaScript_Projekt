@@ -35,7 +35,15 @@
             <div class="brand__mark">ØH</div>
           </a>
 
-          <nav class="nav">
+          <!-- Burger-knap (altid synlig) -->
+          <button class="burger" aria-label="Åbn menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <!-- Menu-panel (bruges både desktop + mobil) -->
+          <nav class="menu-panel" aria-label="Hovedmenu">
             <a href="#">Forside</a>
             <a href="#">2. Division herrer</a>
             <a href="#">Øvrige hold</a>
@@ -43,6 +51,7 @@
             <a href="#">Om os</a>
             <a href="#">FØH events</a>
           </nav>
+
         </div>
       </div>
     </header>
@@ -277,6 +286,10 @@
         </div>
       </div>
     </footer>
+
+<script src="js/burger.js"></script>
+
+
     <script src="js/score.ingrid.js" defer></script>
   </body>
 </html>
